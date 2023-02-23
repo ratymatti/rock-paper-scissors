@@ -8,14 +8,27 @@ class App extends Component {
     super(props);
 
     this.state = {
-      playersChoice: ''
+      playersChoice: '',
+      computersChoice: ''
     }
 
     this.getPlayersChoice = this.getPlayersChoice.bind(this);
   }
 
   getPlayersChoice(choice) {
+    const computersChoice = this.generateComputerChoice();
+
     this.setState({ playersChoice: choice });
+
+    setTimeout(() => {
+      this.setState({ computersChoice: computersChoice });  
+    }, 2000)
+  }
+
+  generateComputerChoice() {
+    const choices = ['rock', 'paper', 'scissors'];
+    const randomIndex = Math.floor(Math.random() * 3);
+    return choices[randomIndex];
   }
 
   render() {
@@ -24,7 +37,6 @@ class App extends Component {
         <header>
           <h1>Rock-paper-scissors</h1>
         </header>
-        <p>this</p>
         <Options  onPlayersChoice={this.getPlayersChoice} />
       </div>
     );
