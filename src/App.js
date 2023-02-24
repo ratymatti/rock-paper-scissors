@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import Options from './components/Options/Options';
 import Choices from './components/Choices/Choices';
 import determineWinner from './modules/determineWinner/determineWinner';
+import RenderWinner from './components/RenderWinner/RenderWinner';
 
 class App extends Component {
   constructor(props) {
@@ -57,6 +58,7 @@ class App extends Component {
                    computersChoice={this.state.computersChoice}
                    weHaveAWinner={this.state.winner} /> 
         }
+        <RenderWinner winner={this.state.winner} />
         <Options  onPlayersChoice={this.getPlayersChoice} />
       </div>
     );
