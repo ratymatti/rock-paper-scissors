@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FaHandRock, FaHandPaper, FaHandScissors } from 'react-icons/fa';
+import './Options.css';
 
 class Options extends Component {
     constructor(props) {
@@ -20,7 +21,7 @@ class Options extends Component {
 
     render() {
         return (
-            <div>
+            <div className='options'>
                 <button onClick={() => this.setPlayerChoice('rock')}>
                     <FaHandRock size='2rem'/>
                 </button>  

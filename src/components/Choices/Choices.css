@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin: 10px auto;
+    width: 400px;
 }
 
 .computer, .player {
@@ -9,6 +11,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 10px;
 }
   
 .spinningIcon {

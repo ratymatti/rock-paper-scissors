@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
+import './NewGame.css';
 
 class NewGame extends Component {
     render() {
         return (
             <div className='newGame'>
-               <button  className='newGameButton'
-                        onClick={this.props.clearGame}>New Game</button> 
+               <button onClick={this.props.clearGame}>New Game</button> 
             </div>
         );
     }

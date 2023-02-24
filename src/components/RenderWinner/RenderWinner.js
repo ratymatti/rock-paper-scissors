@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './RenderWinner.css';
 
 class RenderWinner extends Component {
 
