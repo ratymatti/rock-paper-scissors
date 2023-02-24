@@ -1,3 +1,10 @@
+/**
+ * Function determineWinner which is used to check who won the game, player or computer.
+ * 
+ * @param {*} playersChoice 
+ * @param {*} computersChoice 
+ * @returns result of the game
+ */
 
 function determineWinner(playersChoice, computersChoice) {
     if (playersChoice === computersChoice) {
