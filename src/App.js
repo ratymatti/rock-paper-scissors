@@ -5,6 +5,7 @@ import Options from './components/Options/Options';
 import Choices from './components/Choices/Choices';
 import determineWinner from './modules/determineWinner/determineWinner';
 import RenderWinner from './components/RenderWinner/RenderWinner';
+import Score from './components/Score/Score';
 
 class App extends Component {
   constructor(props) {
@@ -53,6 +54,7 @@ class App extends Component {
         <header>
           <h1>Rock-paper-scissors</h1>
         </header>
+          <Score score={this.state.score} />
         {this.state.playersChoice &&
           <Choices playersChoice={this.state.playersChoice}
                    computersChoice={this.state.computersChoice}
