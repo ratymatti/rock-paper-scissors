@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React, { Component } from 'react';
 import Options from './components/Options/Options';
+import Choices from './components/Choices/Choices';
 
 class App extends Component {
   constructor(props) {
@@ -37,6 +38,10 @@ class App extends Component {
         <header>
           <h1>Rock-paper-scissors</h1>
         </header>
+        {this.state.playersChoice &&
+          <Choices playersChoice={this.state.playersChoice}
+                   computersChoice={this.state.computersChoice} /> 
+        }
         <Options  onPlayersChoice={this.getPlayersChoice} />
       </div>
     );
