@@ -11,11 +11,11 @@ class Choices extends Component {
     renderChoice(choice) {
         switch(choice) {
             case 'rock':
-                return <FaHandRock size='2rem'/>;
+                return <FaHandRock size='3rem'/>;
             case 'paper':
-                return <FaHandPaper size='2rem'/>;
+                return <FaHandPaper size='3rem'/>;
             case 'scissors':
-                return <FaHandScissors size='2rem'/>;
+                return <FaHandScissors size='3rem'/>;
             default:
                 return null;
         }
@@ -27,10 +27,12 @@ class Choices extends Component {
         return (
             <div>
                 <div className='player'>
-                    {this.props.playersChoice && renderChoice(this.props.playersChoice)}    
+                    {this.props.playersChoice && renderChoice(this.props.playersChoice)}
+                    <h3>Players Choice</h3>    
                 </div>
                 <div className='computer'>
                     {this.props.computersChoice && this.renderChoice(this.props.computersChoice)}
+                    <h3>Computers Choice</h3>
                 </div>   
             </div>
         );
