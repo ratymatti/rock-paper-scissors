@@ -3,6 +3,7 @@ import './App.css';
 import React, { Component } from 'react';
 import Options from './components/Options/Options';
 import Choices from './components/Choices/Choices';
+import determineWinner from './modules/determineWinner/determineWinner';
 
 class App extends Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class App extends Component {
     }
 
     this.getPlayersChoice = this.getPlayersChoice.bind(this);
+    
   }
 
   getPlayersChoice(choice) {
@@ -30,6 +32,10 @@ class App extends Component {
     const choices = ['rock', 'paper', 'scissors'];
     const randomIndex = Math.floor(Math.random() * 3);
     return choices[randomIndex];
+  }
+
+  handleWinner() {
+
   }
 
   render() {
