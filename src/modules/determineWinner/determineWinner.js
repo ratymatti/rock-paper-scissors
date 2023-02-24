@@ -1,6 +1,8 @@
 
 function determineWinner(playersChoice, computersChoice) {
-    if (playersChoice === 'rock' && computersChoice === 'scissors') {
+    if (playersChoice === computersChoice) {
+        return `it's a tie!`
+    } else if (playersChoice === 'rock' && computersChoice === 'scissors') {
         return 'player';
     } else if (playersChoice === 'paper' && computersChoice === 'rock') {
         return 'player';

@@ -32,7 +32,7 @@ class Choices extends Component {
                 </div>
                 <div className='computer'>
                     {this.props.computersChoice && this.renderChoice(this.props.computersChoice)}
-                    <h3>Computers Choice</h3>
+                    <h3>Computers</h3>
                 </div>   
             </div>
         );

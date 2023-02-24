@@ -11,20 +11,22 @@ class App extends Component {
 
     this.state = {
       playersChoice: '',
-      computersChoice: ''
+      computersChoice: '',
+      winner: '',
+      score: 0
     }
 
     this.getPlayersChoice = this.getPlayersChoice.bind(this);
-    
+     
   }
 
   getPlayersChoice(choice) {
     const computersChoice = this.generateComputerChoice();
 
-    this.setState({ playersChoice: choice });
+    this.setState({ playersChoice: choice, computersChoice: computersChoice });
 
     setTimeout(() => {
-      this.setState({ computersChoice: computersChoice });  
+      this.handleWinner();
     }, 2000)
   }
 
@@ -35,7 +37,13 @@ class App extends Component {
   }
 
   handleWinner() {
-
+    const winner = determineWinner(this.state.playersChoice, this.state.computersChoice);
+    if (winner === 'player') {
+      this.setState({ winner: winner, score: (this.state.score + 1) })
+    } else {
+      this.setState({ winner: winner });
+    }
+    
   }
 
   render() {
