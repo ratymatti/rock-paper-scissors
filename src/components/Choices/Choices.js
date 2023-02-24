@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { FaHandRock, FaHandPaper, FaHandScissors } from 'react-icons/fa';
+import { FaHandRock, FaHandPaper, FaHandScissors, FaSpinner } from 'react-icons/fa';
+import './Choices.css';
 
 class Choices extends Component {
     constructor(props) {
@@ -25,14 +26,21 @@ class Choices extends Component {
         const renderChoice = this.renderChoice;
 
         return (
-            <div>
+            <div className='choices'>
                 <div className='player'>
-                    {this.props.playersChoice && renderChoice(this.props.playersChoice)}
+                    <div className='icon'>
+                        {this.props.playersChoice && renderChoice(this.props.playersChoice)}
+                    </div>
                     <h3>Players Choice</h3>    
                 </div>
                 <div className='computer'>
-                    {this.props.computersChoice && this.renderChoice(this.props.computersChoice)}
-                    <h3>Computers</h3>
+                    <div className='spinningIcon'>
+                        {this.props.computersChoice && !this.props.weHaveAWinner && <FaSpinner size='3rem'/>}
+                    </div>
+                    <div className='icon'>
+                        {this.props.computersChoice && this.props.weHaveAWinner && this.renderChoice(this.props.computersChoice)}
+                    </div>
+                    <h3>Computers Choice</h3>
                 </div>   
             </div>
         );

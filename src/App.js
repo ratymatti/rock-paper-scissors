@@ -17,7 +17,7 @@ class App extends Component {
     }
 
     this.getPlayersChoice = this.getPlayersChoice.bind(this);
-     
+
   }
 
   getPlayersChoice(choice) {
@@ -27,7 +27,7 @@ class App extends Component {
 
     setTimeout(() => {
       this.handleWinner();
-    }, 2000)
+    }, 1000)
   }
 
   generateComputerChoice() {
@@ -54,7 +54,8 @@ class App extends Component {
         </header>
         {this.state.playersChoice &&
           <Choices playersChoice={this.state.playersChoice}
-                   computersChoice={this.state.computersChoice} /> 
+                   computersChoice={this.state.computersChoice}
+                   weHaveAWinner={this.state.winner} /> 
         }
         <Options  onPlayersChoice={this.getPlayersChoice} />
       </div>
