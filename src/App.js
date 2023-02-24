@@ -6,6 +6,7 @@ import Choices from './components/Choices/Choices';
 import determineWinner from './modules/determineWinner/determineWinner';
 import RenderWinner from './components/RenderWinner/RenderWinner';
 import Score from './components/Score/Score';
+import NewGame from './components/NewGame/NewGame';
 
 class App extends Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class App extends Component {
     }
 
     this.getPlayersChoice = this.getPlayersChoice.bind(this);
-
+    this.clearGame = this.clearGame.bind(this);
   }
 
   getPlayersChoice(choice) {
@@ -48,6 +49,10 @@ class App extends Component {
     
   }
 
+  clearGame() {
+    this.setState({ playersChoice: '', computersChoice: '', winner: '' })
+  }
+
   render() {
     return (
       <div className="App">
@@ -61,7 +66,12 @@ class App extends Component {
                    weHaveAWinner={this.state.winner} /> 
         }
         <RenderWinner winner={this.state.winner} />
-        <Options  onPlayersChoice={this.getPlayersChoice} />
+        {!this.state.playersChoice &&
+          <Options  onPlayersChoice={this.getPlayersChoice} />        
+        }
+        {this.state.winner &&
+          <NewGame clearGame={this.clearGame} />
+        }
       </div>
     );
   }
