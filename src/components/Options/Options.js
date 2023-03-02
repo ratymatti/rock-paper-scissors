@@ -14,7 +14,7 @@ class Options extends Component {
     }
 
     setPlayerChoice(choice) {
-        this.setState({ playerChoice: choice }, () => {
+        this.setState({ ...this.state, playerChoice: choice }, () => {
             this.props.onPlayersChoice(this.state.playerChoice)
         });
     }

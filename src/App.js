@@ -26,7 +26,7 @@ class App extends Component {
   getPlayersChoice(choice) {
     const computersChoice = this.generateComputerChoice();
 
-    this.setState({ playersChoice: choice, computersChoice: computersChoice });
+    this.setState({ ...this.state, playersChoice: choice, computersChoice: computersChoice });
 
     setTimeout(() => {
       this.handleWinner();
@@ -42,15 +42,15 @@ class App extends Component {
   handleWinner() {
     const winner = determineWinner(this.state.playersChoice, this.state.computersChoice);
     if (winner === 'player') {
-      this.setState({ winner: winner, score: (this.state.score + 1) })
+      this.setState({ ...this.state, winner: winner, score: (this.state.score + 1) })
     } else {
-      this.setState({ winner: winner });
+      this.setState({ ...this.state, winner: winner });
     }
     
   }
 
   clearGame() {
-    this.setState({ playersChoice: '', computersChoice: '', winner: '' })
+    this.setState({ ...this.state, playersChoice: '', computersChoice: '', winner: '' })
   }
 
   render() {
