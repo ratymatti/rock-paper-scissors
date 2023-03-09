@@ -1,4 +1,4 @@
-import React, { Component, useMemo } from 'react';
+import React, { Component } from 'react';
 import { FaHandRock, FaHandPaper, FaHandScissors, FaSpinner } from 'react-icons/fa';
 import './Choices.css';
 import memoizeOne from 'memoize-one';
